@@ -14,7 +14,7 @@
   function  createAddWriteOutput(operator, resnultBeforeCalc , calcNumber){
       const calcDescription = `${resnultBeforeCalc} ${operator} ${calcNumber}`;
      outputResult(currentResult,calcDescription); 
-    }
+    } 
 
   
     function writeToLog(operationIdentifier , prevResult , operationNumber ,  newResult ) {
@@ -25,11 +25,9 @@
             result: newResult
         };
         logEntries.push(logEntry);
-        console.log(logEntry.operation);
+
         console.log(logEntries);
    }
-
-
 
 
     // Fuction add the numbers
@@ -38,6 +36,7 @@
          const initialResult = currentResult;
         currentResult +=enterdNumber ;
         createAddWriteOutput("+", initialResult, enterdNumber);
+      
         writeToLog("ADD", initialResult, enterdNumber, currentResult);
     }
 
