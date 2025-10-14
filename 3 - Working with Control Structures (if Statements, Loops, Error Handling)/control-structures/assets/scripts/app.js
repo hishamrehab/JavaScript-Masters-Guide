@@ -29,36 +29,45 @@ function writeToLog(
   console.log(logEntries);
 }
 
-function add() {
-  const enteredNumber = getUserNumberInput();
+function calcualteResult(calculationType) {
+    const enteredNumber = getUserNumberInput();
   const initialResult = currentResult;
-  currentResult += enteredNumber;
-  createAndWriteOutput('+', initialResult, enteredNumber);
-  writeToLog('ADD', initialResult, enteredNumber, currentResult);
+  let mathOperator;
+  if(calculationType === "ADD") {
+    currentResult += enteredNumber;
+    mathOperator = "+";
+  } else if (calculationType === "SUBTRACT") {
+    currentResult -= enteredNumber;
+    mathOperator = "-";
+  } else if(calculationType === "MULTIPLY") {
+  currentResult *= enteredNumber;
+  mathOperator = "*";
+  } else if (calculationType === "DIVIDE"){
+    currentResult /= enteredNumber;
+    mathOperator = "/";
+  }
+
+
+
+  createAndWriteOutput(mathOperator, initialResult, enteredNumber);
+  writeToLog(calculationType, initialResult, enteredNumber, currentResult);
 }
 
-function subtract() {
-  const enteredNumber = getUserNumberInput();
-  const initialResult = currentResult;
-  currentResult -= enteredNumber;
-  createAndWriteOutput('-', initialResult, enteredNumber);
-  writeToLog('SUBTRACT', initialResult, enteredNumber, currentResult);
-}
+
+  function add() {
+  calcualteResult("ADD");
+  }
+
+  function subtract() {
+    calcualteResult("SUBTRACT");
+  }
 
 function multiply() {
-  const enteredNumber = getUserNumberInput();
-  const initialResult = currentResult;
-  currentResult *= enteredNumber;
-  createAndWriteOutput('*', initialResult, enteredNumber);
-  writeToLog('MULTIPLY', initialResult, enteredNumber, currentResult);
+ calcualteResult("MULTIPLY");
 }
 
 function divide() {
-  const enteredNumber = getUserNumberInput();
-  const initialResult = currentResult;
-  currentResult /= enteredNumber;
-  createAndWriteOutput('/', initialResult, enteredNumber);
-  writeToLog('DIVIDE', initialResult, enteredNumber, currentResult);
+calcualteResult("DIVIDE");
 }
 
 addBtn.addEventListener('click', add);
