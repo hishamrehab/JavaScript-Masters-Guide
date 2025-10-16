@@ -10,7 +10,7 @@ function getUserNumberInput() {
 // Generates and writes calculation log
 function createAndWriteOutput(operator, resultBeforeCalc, calcNumber) {
   const calcDescription = `${resultBeforeCalc} ${operator} ${calcNumber}`;
-  outputResult(currentResult, calcDescription); // from vendor file
+  outputResult(currentResult, calcDescription);
 }
 
 function writeToLog(
@@ -46,7 +46,6 @@ function calcualteResult(calculationType) {
     currentResult /= enteredNumber;
     mathOperator = "/";
   }
-
 
 
   createAndWriteOutput(mathOperator, initialResult, enteredNumber);
