@@ -30,10 +30,12 @@ function writeToLog(
 }
 
 function calcualteResult(calculationType) {
+   const enteredNumber = getUserNumberInput();
   if (calculationType !== "ADD" && 
       calculationType !== "SUBTRACT" &&
       calculationType !== "MULTIPLY" &&
-      calculationType !== "DIVIDE" 
+      calculationType !== "DIVIDE" ||
+      !enteredNumber 
       ) {
      return;
   }
@@ -44,7 +46,7 @@ function calcualteResult(calculationType) {
       calculationType === "MULTIPLY" ||
        calculationType === "DIVIDE"
   ) {
-  const enteredNumber = getUserNumberInput();
+ 
   const initialResult = currentResult;
   let mathOperator;
   if(calculationType === "ADD") {
