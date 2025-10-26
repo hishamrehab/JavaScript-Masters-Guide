@@ -216,8 +216,9 @@ function healPlayerHandler() {
 
 function printLogHandler() {  
    for(let i = 0 ; i < battleLog.length; i++) {
-  console.log('---------------------');
+     console.log('---------------------');
    }
+
   // for(let i = 10 ; i > 0 ; i--){
   //   console.log('---------------------');
   //   console.log(i);
@@ -227,14 +228,33 @@ function printLogHandler() {
   //    console.log(battleLog[i]);
   //  }
   //   console.log(battleLog);
-  let i = 0;
-  for(const logEntry of battleLog) {
-    console.log(`#${i}`);
-   for(const key in logEntry) {
-     console.log(key);
-     console.log(logEntry[key]);
-   } 
-  }
+  // let i = 0;
+  // for(const logEntry of battleLog) {
+  //   console.log(`#${i}`);
+  //  for(const key in logEntry) {
+  //    console.log(key);
+  //    console.log(logEntry[key]);
+  //  } 
+  // }
+
+
+// let j = 0;
+// while(j < battleLog.length) {
+//   console.log(`#${j}`);
+//   console.log(battleLog[j]);
+//   j++;
+// }
+ 
+   let j = 3;
+   do {
+    console.log(`#${j}`);
+    console.log(battleLog[j]);
+     j++;
+   } while(j < battleLog.length) {
+  console.log(`#${j}`);
+  console.log(battleLog[j]);
+  j++;
+}
 }
 
 attackBtn.addEventListener('click', attackHandler);
