@@ -257,20 +257,39 @@ function printLogHandler() {
 //   j++;
 // }
 
-  let i = 0;
-  for(const logEntry of battleLog) {
-     if(!lastLoggedEntry  && lastLoggedEntry !== 0 || lastLoggedEntry < i ) {
-      console.log(`#${i}`);
-    for(const key in logEntry) {
-      console.log(key);
-      console.log(logEntry[key]);
-    } 
-     lastLoggedEntry = i;
-     break;
-     } 
-    i++;
+  // let i = 0;
+  // for(const logEntry of battleLog) {
+  //    if(!lastLoggedEntry  && lastLoggedEntry !== 0 || lastLoggedEntry < i ) {
+  //     console.log(`#${i}`);
+  //   for(const key in logEntry) {
+  //     console.log(key);
+  //     console.log(logEntry[key]);
+  //   } 
+  //    lastLoggedEntry = i;
+  //    break;
+  //    } 
+  //   i++;
+  // }
+ 
+    for (let i = 0 ; i< 3 ; i++) {
+      console.log('---------------------');
+    }
+    let j = 0;
+   outerWhile: do {
+      console.log(`Outer` , j);
+     innerFor: for(let k = 0 ; k < 5 ; k++) {
+        if(k === 3) {
+          //  break outerWhile;
+          continue outerWhile;
+        }
+        console.log(k);
+      }
+      j++;  
+    } while(j < battleLog.length)
   }
-  }
+
+  
+  
 
 attackBtn.addEventListener('click', attackHandler);
 strongAttackBtn.addEventListener('click', strongAttackHandler);
