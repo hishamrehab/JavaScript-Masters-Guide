@@ -1,16 +1,22 @@
- var name = "Max";
- let ho
+//  var name = "Max";
 
- if(name === "Max") {
-     let hobbies = ["Sports", "Cooking"];
-     console.log(hobbies);
- }
 
-function greet() {
-    var age = 30;
-    let name = "Anula";
-    console.log(name , age , hobbies);
-}
+//  if(name === "Max") {
+//      let hobbies = ["Sports", "Cooking"];
+//      console.log(hobbies);
+//  }
 
-console.log(age , name);
-greet();
+// function greet() {
+//     var age = 30;
+//     let name = "Anula";
+//     console.log(name , age , hobbies);
+// }
+
+// console.log(age , name);
+// greet();
+
+
+ console.log(userName);
+  
+ var userName = "Max";
+ 
