@@ -15,8 +15,12 @@
 // console.log(age , name);
 // greet();
 
-
- console.log(userName);
+"use strict";
   
  var userName = "Max";
+ var userName = "Manuel";
+
+ console.log(userName);
+
+
  
