@@ -1,8 +1,14 @@
 const startGameBtn = document.getElementById('start-game-btn');
 
-const start = function () {
-console.log("Game is Starting...");
-}
+
+//   const start = function () {
+//   console.log("Game is Starting...");
+// };
+
+// function start() {
+//    console.log("Game is starting..." , age);
+// }
+
 
 // const person = {name :"Max"};
 // console.log(person.name);
