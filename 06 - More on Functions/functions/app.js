@@ -21,9 +21,8 @@ const getPlayerChoice = () => {
           selection !== SESSIORS ) 
     {
     alert(`Invalid Choice We chose ${ROCK} fro you! `);
-    return DEFAULT_USER_CHOUCE;
+    return;
     }
-
     return selection;
 };
 
@@ -41,7 +40,13 @@ const getComputerChoice = () => {
 
 
 
-const getWinner = (cChoice ,  pChoice) => cChoice === pChoice
+const getWinner = (
+  cChoice ,
+   pChoice  =
+  DEFAULT_USER_CHOUCE
+  ) => 
+
+  cChoice === pChoice
      ? RESULT_DRAW 
      : (cChoice === ROCK && pChoice === PAPER|| 
         cChoice === PAPER && pChoice === SESSIORS ||
@@ -71,12 +76,18 @@ const getWinner = (cChoice ,  pChoice) => cChoice === pChoice
 gameIsRunning = true;
  const playerChoice =  getPlayerChoice();
  const computerChoice = getComputerChoice();
- const winner  = getWinner(playerChoice , computerChoice);
+  let winner;
+ if(playerChoice) {
+    winner  = getWinner(playerChoice , computerChoice);
+ }else {
+  winner = getWinner(computerChoice);
+ }
+ 
  let message =  `You picked ${playerChoice} ,
       computer picked ${computerChoice} , therfore you. `;;
   
  if(winner === RESULT_DRAW) {
-     message = `You picked ${playerChoice} ,
+     message = `You picked ${playerChoice || DEFAULT_USER_CHOUCE } ,
       computer picked ${computerChoice} , therfore you had a draw. `;
   } else if(winner === RESULT_COMPUTER_WINS) {
      message = message + "won.";
@@ -86,3 +97,27 @@ gameIsRunning = true;
  alert(message);
  gameIsRunning = false;
 });
+
+
+// not related to the game
+const sumUp = (a, b ,...numbers) => {
+ let sum = 0;
+ for(const num of numbers) {
+  sum += num
+ }
+ return sum;
+};
+
+
+const subtractUp = function() {
+    let sum = 0;
+ for(const num of numbers) {
+  sum -= num
+ }
+ return sum;
+}
+
+
+sumUp(1 , 5 , 10 , -3 , 6 , 10);
+console.log(sumUp(1 , 5 , 10 , -3 , 6 , 10 , 25 , 88));
+console.log(subtractUp(1 , 5 , 10 , -3 , 6 , 10));
