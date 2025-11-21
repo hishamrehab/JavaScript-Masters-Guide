@@ -36,9 +36,9 @@ return parsedValue;s
     chosenMaxLife = getMaxLifeValues();
   }catch(error) {
     console.log(error);
-  // chosenMaxLife = 100;
-  // alert("Invalid user input, default value of 100 was used.");
-  throw error;
+  chosenMaxLife = 100;
+  alert("Invalid user input, default value of 100 was used.");
+  // throw error;
 }
 
 
